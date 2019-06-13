@@ -1,0 +1,153 @@
+{
+  "name": "request-received",
+  "description": "Route middleware for Koa and Express that adds `req[startAt]` high-resolution timer (via `process.hrtime()`) and `req[startTime]` Date (via `new Date()`) using `Symbol.for` to the request object.  Made for Cabin.",
+  "version": "0.0.0",
+  "author": "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)",
+  "ava": {
+    "failFast": true,
+    "verbose": true
+  },
+  "bugs": {
+    "url": "https://github.com/cabinjs/request-received/issues",
+    "email": "niftylettuce@gmail.com"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "contributors": [
+    "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "ava": "^2.1.0",
+    "codecov": "^3.5.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-xo-lass": "^1.0.3",
+    "eslint-plugin-node": "^9.1.0",
+    "express": "^4.17.1",
+    "fixpack": "^2.3.1",
+    "husky": "^2.4.1",
+    "koa": "^2.7.0",
+    "lint-staged": "^8.2.1",
+    "nyc": "^14.1.1",
+    "remark-cli": "^6.0.1",
+    "remark-preset-github": "^0.0.13",
+    "rimraf": "^2.6.3",
+    "supertest": "^4.0.2",
+    "xo": "^0.24.0"
+  },
+  "engines": {
+    "node": ">=6.4.0"
+  },
+  "files": [
+    "lib"
+  ],
+  "homepage": "https://github.com/cabinjs/request-received",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "keywords": [
+    "Symbol",
+    "airbrake",
+    "bunyan",
+    "cabin",
+    "connect",
+    "date",
+    "diff",
+    "difference",
+    "express",
+    "for",
+    "high",
+    "hrtime",
+    "http",
+    "koa",
+    "log",
+    "logger",
+    "logging",
+    "loggly",
+    "morgan",
+    "morgan",
+    "ms",
+    "pino",
+    "process",
+    "process.hrtime",
+    "received",
+    "request",
+    "resolution",
+    "sentry",
+    "service",
+    "signale",
+    "start",
+    "started",
+    "timber",
+    "time",
+    "timer",
+    "timestamp",
+    "timing",
+    "tool",
+    "utility",
+    "winston",
+    "x-response-time"
+  ],
+  "license": "MIT",
+  "lint-staged": {
+    "linters": {
+      "*.js": [
+        "xo --fix",
+        "git add"
+      ],
+      "*.md": [
+        "remark . -qfo",
+        "git add"
+      ],
+      "package.json": [
+        "fixpack",
+        "git add"
+      ]
+    }
+  },
+  "main": "lib/index.js",
+  "prettier": {
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "trailingComma": "none"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-github"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cabinjs/request-received"
+  },
+  "scripts": {
+    "ava": "cross-env NODE_ENV=test ava",
+    "build": "npm run build:clean && npm run build:lib",
+    "build:clean": "rimraf lib",
+    "build:lib": "babel src --out-dir lib",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "lint": "xo && remark . -qfo && eslint lib",
+    "nyc": "cross-env NODE_ENV=test nyc ava",
+    "test": "npm run build && npm run lint && npm run ava",
+    "test-coverage": "npm run build && npm run lint && npm run nyc"
+  },
+  "xo": {
+    "prettier": true,
+    "space": true,
+    "extends": [
+      "xo-lass"
+    ]
+  }
+}
