@@ -8,7 +8,7 @@
 [![license](https://img.shields.io/github/license/cabinjs/request-received.svg)](LICENSE)
 [![npm downloads](https://img.shields.io/npm/dt/request-received.svg)](https://npm.im/request-received)
 
-> Route middleware for Koa and Express that adds `req[startAt]` high-resolution timer (via `process.hrtime()`) and `req[startTime]` Date (via `new Date()`) using `Symbol.for` to the request object.  Made for Cabin.
+> Route middleware for Koa and Express that adds a request received high-resolution timer and Date to the request object using easily accessible Symbols to prevent request object pollution.  Made for [Cabin][].
 
 
 ## Table of Contents
@@ -131,3 +131,5 @@ app.listen();
 [npm]: https://www.npmjs.com/
 
 [yarn]: https://yarnpkg.com/
+
+[cabin]: https://cabinjs.com

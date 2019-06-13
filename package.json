@@ -1,6 +1,6 @@
 {
   "name": "request-received",
-  "description": "Route middleware for Koa and Express that adds `req[startAt]` high-resolution timer (via `process.hrtime()`) and `req[startTime]` Date (via `new Date()`) using `Symbol.for` to the request object.  Made for Cabin.",
+  "description": "Route middleware for Koa and Express that adds a request received high-resolution timer and Date to the request object using easily accessible Symbols to prevent request object pollution.  Made for Cabin.",
   "version": "0.0.0",
   "author": "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)",
   "ava": {
