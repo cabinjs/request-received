@@ -1,7 +1,7 @@
 {
   "name": "request-received",
   "description": "Route middleware for Koa and Express that adds a request received high-resolution timer and Date to the request object using easily accessible Symbols to prevent request object pollution.  Made for Cabin.",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)",
   "ava": {
     "failFast": true,
