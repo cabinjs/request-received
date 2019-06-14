@@ -60,8 +60,8 @@ app.use(requestReceived);
 app.use((req, res, next) => {
   console.log('startAt', req[startAt]); // `process.hrtime()`
   // [ 472542, 431456521 ]
-  console.log('startTime', req[startTime]); // new Date()
-  // 2000-01-01T06:00:00.000Z
+  console.log('startTime', req[startTime]); // Date.now()
+  // 1560499520000
   next();
 });
 
@@ -94,8 +94,8 @@ app.use(requestReceived);
 app.use((ctx, next) => {
   console.log('startAt', ctx[startAt]); // `process.hrtime()`
   // [ 472542, 431456521 ]
-  console.log('startTime', ctx[startTime]); // new Date()
-  // 2000-01-01T06:00:00.000Z
+  console.log('startTime', ctx[startTime]); // Date.now()
+  // 1560499520000
 
   // note that the symbols are also accessible via:
   // ctx.req[startAt]
@@ -126,7 +126,7 @@ app.listen();
 [MIT](LICENSE) © [Nick Baugh](http://niftylettuce.com/)
 
 
-## 
+##
 
 [npm]: https://www.npmjs.com/
 
