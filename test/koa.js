@@ -33,9 +33,9 @@ test.cb(
   'sets ctx[startTime], ctx.req[startTime], ctx.req[startTime], ctx.request[startTime]',
   t => {
     t.context.app.use(ctx => {
-      t.true(ctx[startTimeSymbol] instanceof Date);
-      t.true(ctx.req[startTimeSymbol] instanceof Date);
-      t.true(ctx.request[startTimeSymbol] instanceof Date);
+      t.true(typeof ctx[startTimeSymbol] === 'number');
+      t.true(typeof ctx.req[startTimeSymbol] === 'number');
+      t.true(typeof ctx.request[startTimeSymbol] === 'number');
       ctx.body = 'ok';
     });
     const request = supertest(t.context.server);

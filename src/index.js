@@ -4,7 +4,7 @@ const startTimeSymbol = Symbol.for('request-received.startTime');
 module.exports = function(...args) {
   // start the timers
   const startAt = process.hrtime();
-  const startTime = new Date();
+  const startTime = Date.now();
 
   // support both express and koa route middleware
   const isExpress =

@@ -19,7 +19,7 @@ test.beforeEach.cb(t => {
 test.cb('sets req[startAt] and req[startTime]', t => {
   t.context.app.use((req, res) => {
     t.true(Array.isArray(req[startAtSymbol]));
-    t.true(req[startTimeSymbol] instanceof Date);
+    t.true(typeof req[startTimeSymbol] === 'number');
     res.send('ok');
   });
   const request = supertest(t.context.server);
