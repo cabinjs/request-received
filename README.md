@@ -79,7 +79,7 @@ app.listen();
 ```js
 const Koa = require('koa');
 const koaConnect = require('koa-connect');
-const responseReceived = require('response-received');
+const requestReceived = require('request-received');
 const responseTime = require('response-time');
 const requestId = require('express-request-id');
 
